@@ -1,0 +1,39 @@
+.b-table {
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+  margin-bottom: size(1);
+  table {
+    font-size: type-scale(-1);
+    width: 100%;
+    border-collapse: collapse;
+    thead {
+      tr {
+        border-bottom: 1px solid $colour-grey-400;
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid $colour-grey-50;
+      }
+    }
+    th {
+      font-weight: $font-weight-semi-bold;
+      text-align: left;
+      vertical-align: top;
+      padding: 0 size(1) size(1) 0;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    td {
+      min-width: size(10);
+      vertical-align: top;
+      padding: size(1) size(1) size(1) 0;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+  

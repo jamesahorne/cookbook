@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto [last-line];
+  column-gap: $grid-gutter-width;
+}
+
+.grid-item--span-grid-height {
+  grid-area: 1 / 2 / last-line / -1;
+  grid-row-start: span 20;
+}

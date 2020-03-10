@@ -1,0 +1,94 @@
+<div class="g-price-plans-slideshow b-mt-2 b-mb-10 b-mb-15-md">
+  <div class="b-row">
+    <div class="b-col-8">
+      <div class="g-price-plans-slideshow__toggle b-mb-4-md">
+        {% include "@components/00-misc/21-toggle.twig" %}
+      </div>
+    </div>
+  </div>
+  <div class="b-row">
+    <div class="b-col-8">
+      <div class="g-price-plans-slideshow__slideshow b-mt-4">
+        <input class="g-price-plans-slideshow__dots" type="radio" name="slider" id="slide1" checked>
+        <input class="g-price-plans-slideshow__dots" type="radio" name="slider" id="slide2">
+        <input class="g-price-plans-slideshow__dots" type="radio" name="slider" id="slide3">
+        <input class="g-price-plans-slideshow__dots" type="radio" name="slider" id="slide4">
+        <input class="g-price-plans-slideshow__dots" type="radio" name="slider" id="slide5">
+
+        <div class="g-price-plans-slideshow__plans">
+          <div class="g-price-plans-slideshow__content">
+            {% for i in price_plans %}
+            <article class="g-price-plans-slideshow__plan b-mt-5">
+              {% include "@components/00-misc/16-price-plan-slideshow.twig" %}
+              <div class="g-price-plans-slideshow__column b-mt-2">
+                <h4 class="g-price-plans-slideshow__subheading b-mb-2">Data services includes</h4>
+                <div class="g-price-plans-slideshow__tick-list g-price-plans-slideshow__tick-list--{{ loop.index }} b-pt-3 b-pb-2">
+                  {% include "@components/01-content/00-tick-list.twig" %}
+                </div>
+                {% if loop.index == 1 %}
+                <div class="g-price-plans-slideshow__additional b-mt-2">
+                  <p class="b-mb-1">Hobbyist? Free on-premise is available with limitations</p>
+                  <a class="b-link-primary" href="#">100s more 3rd party services available</a>
+                </div>
+                {% endif %}
+                {% if loop.index in [2, 3, 4] %}
+                <div class="b-row">
+                  <div class="b-col-8">
+                    <h4 class="g-price-plans-slideshow__subheading b-mt-2 b-mb-5">3rd party services</h4>
+                  </div>
+                  <div class="b-col-8 b-col-4-md">
+                    <div class="g-price-plans-slideshow__image b-mb-2">
+                      <img class="b-img" src="/images/brand-accenture.png" alt="Alt goes here">
+                    </div>
+                  </div>
+                  <div class="b-col-8 b-col-4-md">
+                    <div class="g-price-plans-slideshow__image b-mb-2">
+                      <img class="b-img" src="/images/brand-adform.png" alt="Alt goes here">
+                    </div>
+                  </div>
+                  <div class="b-col-8 b-col-4-md">
+                    <p class="g-price-plans-slideshow__third-party-service b-mb-1">
+                      <em>Digital element</em>
+                      Location
+                    </p>
+                    <p class="g-price-plans-slideshow__third-party-price">
+                      From
+                      <em>$199</em>
+                      per month
+                    </p>
+                  </div>
+                  <div class="b-col-8 b-col-4-md">
+                    <p class="g-price-plans-slideshow__third-party-service b-mb-1">
+                      <em>eZanga</em>
+                      Anti-fraud
+                    </p>
+                    <p class="g-price-plans-slideshow__third-party-price">
+                      From
+                      <em>$199</em>
+                      per month
+                    </p>
+                  </div>
+                  <div class="b-col-8">
+                    <div class="g-price-plans-slideshow__cta b-mt-6 b-mb-3">
+                      <a class="b-link-primary" href="#">100s more 3rd party services available</a>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="g-price-plans-slideshow__controls">
+          <label for="slide1"></label>
+          <label for="slide2"></label>
+          <label for="slide3"></label>
+          <label for="slide4"></label>
+          <label for="slide5"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

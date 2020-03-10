@@ -1,0 +1,89 @@
+.g-form {
+  padding-left: size(3);
+  padding-right: size(3);
+  position: relative;
+  @supports (filter: drop-shadow(0px 32px 32px black)) {
+    filter: drop-shadow($drop-shadow);
+  }
+  @include media-breakpoint-up(md) {
+    display: flex;
+    & > * {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@include supports-polygon {
+  .g-form__shape {
+    background-color: $colour-white;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{size(2)}));
+    transform: skewY(0deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include media-breakpoint-up(md) {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, size(1) calc(100% - #{size(2)}));
+      top: 0;
+      left: -32px;
+      width: calc(100% + #{size(8)});
+    }
+    @include media-breakpoint-up(lg) {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, size(2) calc(100% - #{size(2)}));
+      top: 0;
+      left: -48px;
+      width: calc(100% + #{size(12)});
+    }
+    @include media-breakpoint-up(xl) {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, size(3) calc(100% - #{size(2)}));
+      top: 0;
+      left: -20%;
+      width: calc(100% + 20%);
+    }
+  }
+}
+
+.g-form__content {
+  @include media-breakpoint-up(md) {
+    padding-right: size(3);
+    border-bottom: none;
+    border-right: $border-secondary;
+    &:last-child {
+      border: none;
+      padding-left: size(3);
+      padding-right: 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding-right: size(5);
+    &:last-child {
+      padding-left: size(5);
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    padding-right: size(8);
+    &:last-child {
+      padding-left: size(8);
+    }
+  }
+  &--image {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+      position: relative;
+    }
+  }
+}
+
+.g-form__title {
+  @include lilita(4);
+}
+
+.g-form__image {
+  width: calc(100% + #{size(10)});
+  position: absolute;
+  top: -80px;
+  left: 0;
+}

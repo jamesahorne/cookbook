@@ -1,0 +1,49 @@
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 25rem,
+  md: 48rem,
+  lg: 62rem,
+  xl: 90rem
+);
+$container-max-widths: (
+  xs: 100%,
+  lg: 57rem,
+  xl: 77rem
+);
+$grid-columns: 8;
+$grid-gutter-width: 16px;
+
+// Type scale
+$size-default: 16px;
+$size-scale: 1.25;
+
+// Font weight
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// Letter spacing
+$letter-spacing: 0.03rem;
+$letter-spacing-large: 0.1rem;
+
+// Shadows
+$text-shadow-red: 0px 1px 0px $colour-red-600;
+$box-shadow-shallow: 0px -2px 2.74791px rgba(0, 0, 0, 0.04), 0px 8.6871px 17.95px rgba(0, 0, 0, 0.07), 0px 100px 80px rgba(0, 0, 0, 0.01);
+$box-shadow-deep: 0px 1.49432px 2.21381px rgba(54, 58, 58, 0.00457694), 0px 3.59106px 5.32008px rgba(54, 58, 58, 0.00774864), -2px 5px 18px rgba(54, 58, 58, 0.01), 0px 12.0616px 17.869px rgba(54, 58, 58, 0.0166941), 0px -17px 33px rgba(54, 58, 58, 0.01), 0px 54px 80px rgba(54, 58, 58, 0.07);
+$drop-shadow: 0px 32px 32px rgba(50, 50, 50, 0.1);
+
+// Links
+$link-secondary: 2px solid $colour-gold-500;
+
+$border-primary: 1px solid $colour-grey-100;
+$border-secondary: 6px solid $colour-grey-50;
+
+// Slideshow
+$slides: 5;
+
+// Border radius
+$border-radius-small: 3px;
+$border-radius-medium: 5px;

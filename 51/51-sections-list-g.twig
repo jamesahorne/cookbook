@@ -1,0 +1,23 @@
+<div class="g-sections-list">
+  {% include "@components/00-misc/12-sections-list.twig" %}
+  <div class="g-section-list__scrollbox b-mt-6">
+    <div class="b-mb-10" id="section-name1">
+      {% include "@groups/02-content/02-lead.twig" with {
+        lead_accordion: true,
+        lead_quote: true,
+        lead_logo_stat: true
+      } %}
+    </div>
+    <div class="b-mb-10" id="section-name2">
+      {% include "@groups/02-content/02-lead.twig" with {
+        lead_invert: true,
+        lead_accordion: true,
+        lead_quote: true,
+        lead_logo_stat: true,
+        accordion_two: true
+      } %}
+    </div>
+  </div>
+</div>
+
+<!-- no scss for sections-list-g -->

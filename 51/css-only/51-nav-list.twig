@@ -1,0 +1,53 @@
+<div class="g-nav-list b-mt-2 b-mb-8 b-mb-15-md">
+  <div class="b-row">
+    <div class="b-col-8 b-col-4-lg b-offset-1-xl b-col-3-xl">
+      <h2 class="g-nav-list__title b-mb-1">There's lots to like</h2>
+    </div>
+    <div class="b-col-8 b-col-4-lg b-col-3-xl">
+      <p class="g-nav-list__subheading b-mb-1">Pipeline API is jam-packed with useful features to help marketers and developers become heroes (with astonishingly little effort).</p>
+      <p class="b-mb-6">Pipeline API is jam-packed with useful features to help marketers and developers become heroes (with astonishingly little effort).</p>
+    </div>
+  </div>
+  <div class="b-row">
+    <div class="b-col-8 b-offset-1-xl b-col-6-xl">
+      <div class="g-nav-list__main b-mt-3-md">
+        <input class="g-nav-list__selector" id="g-nav-list__tab--1" name="g-nav-list__tabs" type="radio" checked>
+        <label class="g-nav-list__heading b-mb-2 b-pt-2 b-pb-2 b-mb-0-md" id="g-nav-list__heading--1" for="g-nav-list__tab--1">
+          Fast
+        </label>
+        <div class="g-nav-list__section b-mb-2 b-pt-2 b-pb-4 b-mb-0-md">
+          {% include "@components/00-misc/00-accordion.twig" with {
+            accordion_name: 'navlist1'
+          } %}
+        </div>
+        <input class="g-nav-list__selector" id="g-nav-list__tab--2" name="g-nav-list__tabs" type="radio">
+        <label class="g-nav-list__heading b-mb-2 b-pt-2 b-pb-2 b-mb-0-md" id="g-nav-list__heading--2" for="g-nav-list__tab--2">
+          Customisable
+        </label>
+        <div class="g-nav-list__section b-mb-2 b-pt-4 b-pb-4 b-mb-0-md">
+          {% include "@components/00-misc/00-accordion.twig" with {
+            accordion_name: 'navlist2'
+          } %}
+        </div>
+        <input class="g-nav-list__selector" id="g-nav-list__tab--3" name="g-nav-list__tabs" type="radio">
+        <label class="g-nav-list__heading b-mb-2 b-pt-2 b-pb-2 b-mb-0-md" id="g-nav-list__heading--3" for="g-nav-list__tab--3">
+          Convenient
+        </label>
+        <div class="g-nav-list__section b-mb-2 b-pt-2 b-pb-4 b-mb-0-md">
+          {% include "@components/00-misc/00-accordion.twig" with {
+            accordion_name: 'navlist3'
+          } %}
+        </div>
+        <input class="g-nav-list__selector" id="g-nav-list__tab--4" name="g-nav-list__tabs" type="radio">
+        <label class="g-nav-list__heading b-mb-2 b-pt-2 b-pb-2 b-mb-0-md" id="g-nav-list__heading--4" for="g-nav-list__tab--4">
+          Reliable
+        </label>
+        <div class="g-nav-list__section b-mb-2 b-pt-4 b-pb-4 b-mb-0-md">
+          {% include "@components/00-misc/00-accordion.twig" with {
+            accordion_name: 'navlist4'
+          } %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

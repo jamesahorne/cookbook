@@ -1,0 +1,47 @@
+.c-accordion__selector {
+  position: absolute;
+  opacity: 0;
+}
+
+.c-accordion__heading {
+  background-image: url('/images/icon-chevron-down.svg');
+  background-size: 25px 13px;
+  background-position-y: size(3);
+  background-repeat: no-repeat;
+  display: block;
+  font-size: type-scale(0);
+  font-weight: $font-weight-bold;
+  padding-left: calc(25px + #{size(2)});
+  cursor: pointer;
+  border-top: $border-primary;
+  @include media-breakpoint-up(md) {
+    font-size: type-scale(1);
+  }
+  &:first-of-type {
+    border: none;
+  }
+}
+
+.c-accordion__description {
+  margin-left: calc(25px + #{size(2)});
+  font-size: type-scale(-1);
+  @include media-breakpoint-up(md) {
+    font-size: type-scale(0);
+  }
+}
+
+.c-accordion__selector:focus + .c-accordion__heading {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c-accordion__section {
+  display: none;
+}
+
+.c-accordion__selector:checked + .c-accordion__heading + .c-accordion__section {
+  display: block;
+}
+
+.c-accordion__selector:checked + .c-accordion__heading {
+  background-image: url('/images/icon-chevron-up.svg');
+}

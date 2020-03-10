@@ -1,0 +1,113 @@
+.c-price-plan-slideshow {
+  position: relative;
+  padding-left: size(4);
+  padding-right: size(4);
+  &--1,
+  &--5 {
+    .c-price-plan-slideshow__name {
+      font-size: type-scale(3);
+      padding-top: 10px;
+    }
+  }
+  &--1 {
+    .c-price-plan-slideshow__name {
+      color: $colour-gold-500;
+    }
+  }
+  &--5 {
+    .c-price-plan-slideshow__name {
+      color: $colour-red-500;
+    }
+  }
+  @include supports-polygon {
+    &--1 {
+      .c-price-plan-slideshow__shape {
+        background-color: $colour-gold-50;
+        clip-path: polygon(0 0, 100% size(1), 100% 100%, 0% 100%);
+        transform: skewY(0deg);
+      }
+    }
+    &--2 {
+      .c-price-plan-slideshow__shape {
+        background-color: $colour-blue-10;
+        clip-path: polygon(0 0, 100% size(1), 100% 100%, 0% 100%);
+        transform: skewY(0deg);
+      }
+    }
+    &--3 {
+      .c-price-plan-slideshow__shape {
+        background-color: $colour-blue-50;
+        clip-path: polygon(0 0, 100% size(1), 100% 100%, 0% 100%);
+        transform: skewY(0deg);
+        height: calc(100% + #{size(1)});
+      }
+      .c-price-plan-slideshow__icon {
+        bottom: calc(100% - #{size(2)});
+      }
+    }
+    &--4 {
+      .c-price-plan-slideshow__shape {
+        background-color: $colour-blue-75;
+        clip-path: polygon(0 size(1), 100% 0, 100% 100%, 0% 100%);
+        transform: skewY(0deg);
+        height: calc(100% + #{size(2)});
+      }
+      .c-price-plan-slideshow__icon {
+        bottom: calc(100% - #{size(1)});
+      }
+    }
+    &--5 {
+      .c-price-plan-slideshow__shape {
+        background-color: $colour-red-50;
+        clip-path: polygon(0 0, 100% size(2), 100% 100%, 0% 100%);
+        transform: skewY(0deg);
+        height: calc(100% + #{size(3)});
+      }
+      .c-price-plan-slideshow__icon {
+        bottom: calc(100% - #{size(1)});
+      }
+    }
+  }
+}
+
+.c-price-plan-slideshow__shape {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.c-price-plan-slideshow__icon {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: calc(100% - #{size(2)});
+  left: 0;
+  right: 0;
+}
+
+.c-price-plan-slideshow__name {
+  @include lilita(4, $colour-blue-500);
+  text-align: center;
+}
+
+.c-price-plan-slideshow__description {
+  font-size: type-scale(-1);
+  text-align: center;
+  min-height: 38px;
+}
+
+.c-price-plan-slideshow__type,
+.c-price-plan-slideshow__requests,
+.c-price-plan-slideshow__data-refresh,
+.c-price-plan-slideshow__pricing {
+  font-weight: $font-weight-semi-bold;
+  text-align: center;
+  em {
+    display: block;
+    font-size: type-scale(-1);
+    font-weight: $font-weight-normal;
+  }
+}

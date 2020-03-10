@@ -1,0 +1,9 @@
+<div class="c-speech-bubble{% if speech_bubble_left %} c-speech-bubble--left{% endif %} {% if speech_bubble_detect %}c-speech-bubble--detect b-mb-2 b-pt-3 b-pb-6 b-mb-0-md{% else %}c-speech-bubble--quote b-pt-3 b-pb-7 b-pt-5-lg b-pb-13-lg{% endif %}">
+  {% if speech_bubble_detect %}
+    <p class="c-speech-bubble__detect">Well hello there, <em>iPhone 11</em> user! How's the weather in <em>Reading</em>?</p>
+  {% else %}
+    <p class="c-speech-bubble__quote b-mb-1">“Upgrading was very easy”</p>
+    <p class="c-speech-bubble__quotee">Dave McDermid</p>
+    <p class="c-speech-bubble__brand">Wiggle</p>
+  {% endif %}
+</div>

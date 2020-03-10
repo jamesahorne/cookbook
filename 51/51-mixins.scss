@@ -1,0 +1,293 @@
+// Breakpoints
+@mixin media-breakpoint-up($breakpoint-name) {
+  @media (min-width: map-get($grid-breakpoints, $breakpoint-name)){
+    @content;
+  }
+}
+
+// Grid
+@mixin make-container {
+  width: 100%;
+  padding-right: $grid-gutter-width;
+  padding-left: $grid-gutter-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-container-max-width {
+  @each $key, $value in $container-max-widths {
+    $var : index(($container-max-widths), ($key $value));
+    @if $var == 1 {
+      max-width: $value;
+    }
+    @else {
+      @include media-breakpoint-up($key) {
+        max-width: $value;
+      }
+    }
+  }
+}
+
+@mixin make-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$grid-gutter-width;
+  margin-left: -$grid-gutter-width;
+}
+
+@mixin col($column, $align: top) {
+  width: percentage($column/$grid-columns);
+  display: inline-block;
+  vertical-align: $align;
+  box-sizing: border-box;
+  padding: 0 $grid-gutter-width;
+}
+
+@mixin offset($column) {
+  margin-left: percentage($column/$grid-columns);
+}
+
+@mixin order($column) {
+  order: $column;
+}
+
+@mixin make-col-offset-order($type) {
+  @each $key, $value in $grid-breakpoints {
+    $var : index(($grid-breakpoints), ($key $value));
+    @if $var == 1 {
+      @for $i from 0 through $grid-columns {
+        .b-#{$type}-#{$i} {
+          @if $type == "col" {
+            @include col($i);
+          }
+          @else if $type == "offset" {
+            @include offset($i);
+          }
+          @else if $type == "order" {
+            @include order($i);
+          }
+          @else {
+            @error "Property '#{$type}' must be either 'col,' 'offset' or 'order'.";
+          }
+        }
+      }
+    }
+    @else {
+      @include media-breakpoint-up($key) {
+        @for $i from 0 through $grid-columns {
+          .b-#{$type}-#{$i}-#{$key} {
+            @if $type == "col" {
+              @include col($i);
+            }
+            @else if $type == "offset" {
+              @include offset($i);
+            }
+            @else if $type == "order" {
+              @include order($i);
+            }
+            @else {
+              @error "Property '#{$type}' must be either 'col,' 'offset' or 'order'.";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin faux-container {
+  overflow: hidden;
+  margin-left: -#{$grid-gutter-width};
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+  width: 100vw;
+  @include media-breakpoint-up(lg) {
+    margin-left: calc(((57rem - 100vw) / 2) - #{$grid-gutter-width});
+    padding-left: calc(((100vw - 57rem) / 2) + #{$grid-gutter-width});
+    padding-right: calc(((100vw - 57rem) / 2) + #{$grid-gutter-width});
+  }
+  @include media-breakpoint-up(xl) {
+    width: 77rem;
+    margin-left: -#{$grid-gutter-width};
+    padding-left:$grid-gutter-width;
+    padding-right:$grid-gutter-width;
+  }
+}
+
+// Vertical spacing
+@mixin vertical-spacing($number) {
+  @each $key, $value in $grid-breakpoints {
+    $var : index(($grid-breakpoints), ($key $value));
+    @for $i from 0 through $number {
+      @if $var == 1 {
+        .b-mt-#{$i} {
+          margin-top: size($i);
+        }
+        .b-mb-#{$i} {
+          margin-bottom: size($i);
+        }
+        .b-pt-#{$i} {
+          padding-top: size($i);
+        }
+        .b-pb-#{$i} {
+          padding-bottom: size($i);
+        }
+      }
+      @else {
+        @include media-breakpoint-up($key) {
+          .b-mt-#{$i}-#{$key} {
+            margin-top: size($i);
+          }
+          .b-mb-#{$i}-#{$key} {
+            margin-bottom: size($i);
+          }
+          .b-pt-#{$i}-#{$key} {
+            padding-top: size($i);
+          }
+          .b-pb-#{$i}-#{$key} {
+            padding-bottom: size($i);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Font Face
+@mixin lilita($font-size, $colour: $colour-red-500) {
+  font-family: 'Lilita One', Verdana, sans-serif;
+  font-size: type-scale($font-size);
+  line-height: 1.2;
+  color: $colour;
+}
+
+// Links
+@mixin link-secondary {
+  border-bottom: $link-secondary;
+  color: $colour-grey-400;
+  &:hover,
+  &:focus {
+    color: $colour-grey-500;
+  }
+}
+
+// Icons
+@mixin arrow-right {
+  position: relative;
+  &:after {
+    content: url('/images/icon-arrow-right.svg');
+    transition: all 0.2s ease;
+    position: absolute;
+    right: -#{size(3)};
+  }
+  &:hover,
+  &:focus {
+    &:after {
+      right: -#{size(4)};
+    }
+  }
+}
+
+@mixin arrow-curvy($top: 20, $arrow: 1) {
+  position: relative;
+  &:before {
+    @if $arrow == 2 {
+      content: url('/images/curvy-arrow-2.svg');
+    } @else {
+      content: url('/images/curvy-arrow.svg');
+    }
+    position: absolute;
+    top: #{-$top}px;
+    left: -104px;
+  }
+}
+
+// Text
+@mixin text($min, $max) {
+  @for $i from $min through $max {
+    .b-text-#{$i} {
+      font-size: type-scale($i);
+    }
+  }
+}
+
+@mixin subheading($font-size: -1) {
+  font-size: type-scale($font-size);
+  font-weight: $font-weight-normal;
+  color: $colour-grey-300;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+}
+
+// Misc
+@mixin supports-polygon {
+  @supports (clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%)) {
+    @content;
+  }
+}
+
+// Buttons
+@mixin button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: $colour-white;
+  cursor: pointer;
+  border-radius: $border-radius-small;
+  font-weight: $font-weight-medium;
+  padding-top: size(2);
+  padding-bottom: size(2);
+  @include media-breakpoint-up(sm) {
+    max-width: size(28);
+  }
+  &--full {
+    max-width: 100%;
+  }
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &--small {
+    width: size(20);
+  }
+  &--bold {
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+// Input fields
+@mixin input-field {
+  color: $colour-grey-300;
+  padding-left: size(2);
+  padding-right: size(2);
+  width: 100%;
+  border: 1px solid $colour-grey-300;
+  border-radius: $border-radius-small;
+  &:focus {
+    outline-width: 4px;
+    outline-style: solid;
+    outline-color: $colour-blue-100;
+  }
+}
+
+
+
+@include media-breakpoint-up(md) {
+  .class {
+    margin-bottom: size(22);
+  }
+}
+
+.b-container {
+  @include make-container;
+  @include make-container-max-width;
+}
+
+.b-row {
+  @include make-row();
+}
+
+@include make-col-offset-order(col);
+@include make-col-offset-order(offset);
+@include make-col-offset-order(order);
+

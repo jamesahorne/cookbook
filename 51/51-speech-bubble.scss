@@ -1,0 +1,51 @@
+.c-speech-bubble {
+  background-image: url('/images/speech-bubble-right.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: size(49);
+  background-size: 100% 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: size(4);
+  padding-right: size(4);
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-up(lg) {
+    padding-left: size(7);
+    padding-right: size(7);
+  }
+  &--left {
+    background-image: url('/images/speech-bubble-left.svg');
+    width: size(34);
+    @include media-breakpoint-up(lg) {
+      padding-left: size(4);
+      padding-right: size(4);
+    }
+  }
+}
+
+.c-speech-bubble__detect {
+  em {
+    color: $colour-red-500;
+    @include media-breakpoint-up(lg) {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.c-speech-bubble__quote {
+  font-weight: $font-weight-medium;
+}
+
+.c-speech-bubble__quotee,
+.c-speech-bubble__brand {
+  font-size: type-scale(-1);
+  @include media-breakpoint-up(md) {
+    font-size: type-scale(0);
+  }
+}
+
+.c-speech-bubble__brand {
+  @include subheading;
+}

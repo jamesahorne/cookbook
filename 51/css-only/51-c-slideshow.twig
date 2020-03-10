@@ -1,0 +1,20 @@
+<div class="c-price-plan-slideshow c-price-plan-slideshow--{{ loop.index | default('1') }} b-pt-3 b-pb-4">
+  <div class="c-price-plan-slideshow__shape"></div>
+  <img class="c-price-plan-slideshow__icon" src="/images/{{ i.icon | default('icon-price-free.svg') }}" alt="Alt goes here">
+  <h3 class="c-price-plan-slideshow__name b-mb-1">{{ i.name | default('Free') }}</h3>
+  <p class="c-price-plan-slideshow__description b-mb-2">{{ i.description | default('For small teams trying out Slack for an unlimited period of time') }}</p>
+  <p class="c-price-plan-slideshow__type b-mb-2">{{ i.type | default('Cloud') }}</p>
+  <p class="c-price-plan-slideshow__requests b-mb-2">
+    {{ i.requests | default('100') }}
+    <em>monthly requests</em>
+  </p>
+  <p class="c-price-plan-slideshow__data-refresh b-mb-2">
+    {{ i.data_refresh | default('100') }}
+    <em>data refresh</em>
+  </p>
+  <p class="c-price-plan-slideshow__pricing b-mb-3">
+    {{ i.pricing | default('£100') }}
+    <em>per month</em>
+  </p>
+  <a class="b-btn-{{ i.colour | default('tertiary') }} b-btn-{{ i.colour | default('tertiary') }}--bold b-btn-{{ i.colour | default('tertiary') }}--center b-btn-{{ i.colour | default('tertiary') }}--small" href="#">{{ i.button | default('Get started') }}</a>
+</div>

@@ -1,0 +1,344 @@
+.c-select {
+  position: relative;
+  &:after {
+    content: url('/images/icon-triangle-down.svg');
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+  }
+}
+
+.c-select__dropdown {
+  @include input-field;
+  background-color: $colour-white;
+}
+
+
+.c-input-text {
+  position: relative;
+  background-color: $colour-white;
+  .c-input-text__error-message {
+    display: none;
+    color: $colour-red-300;
+    font-size: type-scale(-1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.c-input-text__input {
+  @include input-field;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &:focus {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-text__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:valid {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-text__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-text__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & ~ .c-input-text__error-message {
+      display: block;
+    }
+  }
+}
+
+.c-input-text__label {
+  color: $colour-grey-300;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: size(2);
+}
+
+
+.c-input-checkbox {
+  display: flex;
+}
+
+.c-input-checkbox__input {
+  margin-top: 5px;
+}
+
+.c-input-checkbox__label {
+  margin-left: size(2);
+}
+
+
+.c-input-password {
+  position: relative;
+  background-color: $colour-white;
+  .c-input-password__error-message {
+    display: none;
+    color: $colour-red-300;
+    font-size: type-scale(-1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.c-input-password__input {
+  @include input-field;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &:focus {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-password__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:valid {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-password__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-password__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & ~ .c-input-password__error-message {
+      display: block;
+    }
+  }
+}
+
+.c-input-password__label {
+  color: $colour-grey-300;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: size(2);
+}
+
+
+.c-input-email {
+  position: relative;
+  background-color: $colour-white;
+  .c-input-email__error-message {
+    display: none;
+    color: $colour-red-300;
+    font-size: type-scale(-1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.c-input-email__input {
+  @include input-field;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &:focus {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-email__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:valid {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-email__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-email__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & ~ .c-input-email__error-message {
+      display: block;
+    }
+  }
+}
+
+.c-input-email__label {
+  color: $colour-grey-300;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: size(2);
+}
+
+
+.c-input-number {
+  position: relative;
+  background-color: $colour-white;
+  .c-input-number__error-message {
+    display: none;
+    color: $colour-red-300;
+    font-size: type-scale(-1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.c-input-number__input {
+  @include input-field;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &:focus {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-number__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:valid {
+    border-color: $colour-grey-300;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-number__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & + .c-input-number__label {
+      color: $colour-grey-300;
+      font-size: type-scale(-2);
+      z-index: 2;
+      top: 18px;
+      left: size(2);
+    }
+  }
+  &:invalid:focus:not(:placeholder-shown) {
+    border-color: $colour-red-300;
+    border-width: 2px;
+    padding-top: 26px;
+    padding-bottom: 6px;
+    & ~ .c-input-number__error-message {
+      display: block;
+    }
+  }
+}
+
+.c-input-number__label {
+  color: $colour-grey-300;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: size(2);
+}

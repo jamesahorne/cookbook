@@ -1,0 +1,53 @@
+.c-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.c-toggle__slider {
+  position: relative;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    margin-left: size(2);
+    margin-right: size(2);
+    transition: 0.5s;
+    background: $colour-grey-50;
+  }
+  &:before {
+    height: 30px;
+    width: 50px;
+    border-radius: 15px;
+  }
+  &:after {
+    background-color: $colour-blue-100;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 30px;
+    width: 30px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px solid $colour-blue-500;
+  }
+}
+
+.c-toggle__checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.c-toggle__checkbox:checked + .c-toggle__slider {
+  &:before {
+    background-color: $colour-blue-500;
+  }
+  &:after{
+    background-color: $colour-blue-200;
+    transform: translate(20px, -50%);
+  }
+}
+
+.c-toggle__checkbox:focus + .c-toggle__slider {
+  outline: -webkit-focus-ring-color auto 5px;
+}
