@@ -1,0 +1,29 @@
+body {
+  margin: calc((100vh - 10px) / 2) 0;
+}
+
+div {
+  height: 10px;
+  background: linear-gradient(270deg, #ffffff, #ffffff, #ffffff, #a162c5, #ffffff, #ffffff, #ffffff);
+  background-size: 600% 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50vw);
+  width: 100vw;  
+  animation: AnimationName 4s cubic-bezier(.85, .4, .15, .6) infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position:0% 0%
+  }
+  20% {
+    background-position:0% 0%
+  }
+  80% {
+    background-position:100% 0%
+  }
+  100% {
+    background-position:100% 0%
+  }
+}
